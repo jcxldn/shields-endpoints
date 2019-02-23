@@ -16,6 +16,7 @@ window.onload = function() {
     row1();
     row2();
     row3();
+    debug_row1();
 };
 
 function row1() {
@@ -56,4 +57,17 @@ function row3() {
     
     // Set display link
     row3.childNodes[1].childNodes[0].href = './is-it/invalid'
+}
+
+function debug_row1() {
+    const row = document.getElementById("debug_row1");
+
+    // Set badge source relative to hostname
+    row.childNodes[3].childNodes[0].src = `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Froutes%2Fformatted`;
+
+    
+    // Set display link(s)
+    row.childNodes[1].childNodes[0].href = './debug/routes'
+
+    row.childNodes[1].childNodes[2].href= './debug/routes/formatted'
 }
