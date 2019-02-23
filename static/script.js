@@ -25,10 +25,10 @@ function row1() {
     // Set badge source
     row1.childNodes[3].childNodes[0].src = `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2F${days[d.getDay()]}`;
 
-    // Set display link
+    // Set display link (dynamic)
     row1.childNodes[1].childNodes[0].href = `./is-it/${days[d.getDay()]}`
     
-    // Set display address
+    // Set display address (dynamic)
     row1.childNodes[1].childNodes[0].childNodes[0].innerHTML = `/is-it/${days[d.getDay()]}`
 }
 
@@ -41,10 +41,10 @@ function row2() {
     // Set badge source
     row2.childNodes[3].childNodes[0].src = `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2F${days[tomorrow.getDay()]}`;
 
-    // Set display link
+    // Set display link (dynamic)
     row2.childNodes[1].childNodes[0].href = `./is-it/${days[tomorrow.getDay()]}`
 
-    // Set display address
+    // Set display address (dynamic)
     row2.childNodes[1].childNodes[0].childNodes[0].innerHTML = `/is-it/${days[tomorrow.getDay()]}`
 }
 
@@ -53,10 +53,6 @@ function row3() {
     
     // Set badge source
     row3.childNodes[3].childNodes[0].src = `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2Finvalid`;
-
-    
-    // Set display link
-    row3.childNodes[1].childNodes[0].href = './is-it/invalid'
 }
 
 function debug_row1() {
@@ -64,10 +60,4 @@ function debug_row1() {
 
     // Set badge source relative to hostname
     row.childNodes[3].childNodes[0].src = `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Froutes%2Fformatted`;
-
-    
-    // Set display link(s)
-    row.childNodes[1].childNodes[0].href = './debug/routes'
-
-    row.childNodes[1].childNodes[2].href= './debug/routes/formatted'
 }
