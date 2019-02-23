@@ -1,0 +1,17 @@
+{
+  "name": "shields-endpoint",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Prouser123",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "latest",
+    "body-parser": "latest",
+    "sqlite3": "latest"
+  }
+}
