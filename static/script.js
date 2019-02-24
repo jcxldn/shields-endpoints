@@ -16,7 +16,8 @@ console.log("onload.DateAndTime: " + d);
 
 window.onload = function() {
   new table1();
-  new debugTable();
+  setup_youtube();
+  setup_debug();
 };
 
 class BaseRow {
@@ -47,10 +48,6 @@ class table1 {
     this.constructor.row1();
     this.constructor.row2();
     this.constructor.row3();
-    this.constructor.row4();
-    this.constructor.row5();
-    this.constructor.row6();
-    this.constructor.row7();
   }
 
   static row1() {
@@ -101,57 +98,18 @@ class table1 {
       `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fviews%2FYbJOTdZBX1g`
     );
   }
-
-  static row5() {
-    const base = new BaseRow(document.getElementById("row5"));
-
-    // Set badge source
-    base.setBadgeSource(
-      `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Flikes%2FYbJOTdZBX1g`
-    );
-  }
-
-  static row6() {
-    const base = new BaseRow(document.getElementById("row6"));
-
-    // Set badge source
-    base.setBadgeSource(
-      `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fdislikes%2FYbJOTdZBX1g`
-    );
-  }
-
-  static row7() {
-    const base = new BaseRow(document.getElementById("row7"));
-
-    // Set badge source
-    base.setBadgeSource(
-      `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fcomments%2FYbJOTdZBX1g`
-    );
-  }
 }
 
-class debugTable {
-  constructor() {
-    this.constructor.row1();
-    this.constructor.row2();
-    this.constructor.row1();
-  }
+function setup_youtube() { 
+    // Get row and set badge source relative to host
+    new BaseRow(document.getElementById("youtube_views")).setBadgeSource(`https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fviews%2FYbJOTdZBX1g`);
+    new BaseRow(document.getElementById("youtube_likes")).setBadgeSource(`https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Flikes%2FYbJOTdZBX1g`);
+    new BaseRow(document.getElementById("youtube_dislikes")).setBadgeSource(`https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fdislikes%2FYbJOTdZBX1g`);
+    new BaseRow(document.getElementById("youtube_comments")).setBadgeSource(`https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fcomments%2FYbJOTdZBX1g`);
+}
 
-  static row1() {
-    const base = new BaseRow(document.getElementById("debug_row1"));
-
-    // Set badge source relative to hostname
-    base.setBadgeSource(
-      `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Froutes%2Fformatted`
-    );
-  }
-
-  static row2() {
-    const base = new BaseRow(document.getElementById("debug_row2"));
-
-    // Set badge source relative to hostname
-    base.setBadgeSource(
-      `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Fdatetime%2Fformatted`
-    );
-  }
+function setup_debug() {
+    // Get row and set badge source relative to host
+    new BaseRow(document.getElementById("debug_routes")).setBadgeSource(`https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Froutes%2Fformatted`);
+    new BaseRow(document.getElementById("debug_datetime")).setBadgeSource(`https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Fdatetime%2Fformatted`);
 }
