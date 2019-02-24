@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "latest",
     "body-parser": "latest",
+    "request": "latest",
     "sqlite3": "latest"
   },
   "devDependencies": {
