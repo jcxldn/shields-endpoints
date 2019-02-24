@@ -6,12 +6,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static('public'));
+app.use(express.static('static'));
 
 require('./routes')(app);
 
-app.get('/', (req, res) => {
-  res.send('hello')
-});
+const port = process.env.PORT || 3000;
 
-app.listen(process.env.PORT || 3000, () => console.log('server started'));
+app.listen(port, () => console.log(`server started on port ${port}`));

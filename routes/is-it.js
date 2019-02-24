@@ -28,6 +28,7 @@ module.exports = function(app){
         "message": "yes",
         "color": "brightgreen"
       })
+      return
     } else {
       res.send ({
         "schemaVersion": 1,
