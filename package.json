@@ -3,15 +3,23 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "scripts": {},
   "author": "Prouser123",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha --require babel-register tests/*.js --exit"
   },
   "dependencies": {
     "express": "latest",
     "body-parser": "latest",
     "sqlite3": "latest"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.4"
   }
 }

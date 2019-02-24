@@ -18,4 +18,28 @@ function metric(n) {
   return `${n}`;
 }
 
-module.exports = { metric };
+// Day helpers
+
+const days = [
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday"
+];
+
+function isDayToday(day) {
+  const d = new Date();
+
+  return day == days[d.getDay()] ? true : false;
+}
+
+// Capitalise first letter
+function capitaliseFirst(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// Export
+module.exports = { metric, isDayToday, days, capitaliseFirst };
