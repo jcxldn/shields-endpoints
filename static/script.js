@@ -106,6 +106,7 @@ function setup_youtube() {
     new BaseRow(document.getElementById("youtube_likes")).setBadgeSource(`https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Flikes%2FYbJOTdZBX1g`);
     new BaseRow(document.getElementById("youtube_dislikes")).setBadgeSource(`https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fdislikes%2FYbJOTdZBX1g`);
     new BaseRow(document.getElementById("youtube_comments")).setBadgeSource(`https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fcomments%2FYbJOTdZBX1g`);
+    new BaseRow(document.getElementById("youtube_views_invalid")).setBadgeSource(`https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fviews%2Finvalid`);
 }
 
 function setup_debug() {
