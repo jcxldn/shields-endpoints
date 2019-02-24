@@ -12,7 +12,7 @@ chai.should();
 describe("Debug", () => {
   describe(`Routes (array)`, () => {
     let path = `/debug/routes`;
-    it(`GET /debug/routes`, done => {
+    it(`GET ${path}`, done => {
       chai
         .request(app)
         .get(path)
@@ -26,7 +26,7 @@ describe("Debug", () => {
 
   describe(`Routes (formatted)`, () => {
     let path = `/debug/routes/formatted`;
-    it(`GET /debug/routes/formatted`, done => {
+    it(`GET ${path}`, done => {
       chai
         .request(app)
         .get(path)
@@ -39,6 +39,41 @@ describe("Debug", () => {
           });
           // Despite being a number, the endpoint badge requires it to be a string
           chai.expect(res.body.message).to.be.a("string");
+          done();
+        });
+    });
+  });
+
+  describe(`User-Agent`, () => {
+    let path = `/debug/useragent`;
+    it(`GET ${path}`, done => {
+      chai
+        .request(app)
+        .get(path)
+        .set("User-Agent", "Chai Testing")
+        .end((err, res) => {
+          res.should.have.status(200);
+          chai.expect(res.body).to.include({ "User-Agent": "Chai Testing" });
+          done();
+        });
+    });
+  });
+
+  describe(`User-Agent (formatted)`, () => {
+    let path = `/debug/useragent/formatted`;
+    it(`GET ${path}`, done => {
+      chai
+        .request(app)
+        .get(path)
+        .set("User-Agent", "Chai Testing")
+        .end((err, res) => {
+          res.should.have.status(200);
+          chai.expect(res.body).to.include({
+            schemaVersion: 1,
+            label: "user agent",
+            color: "blue",
+            message: "Chai Testing"
+          });
           done();
         });
     });

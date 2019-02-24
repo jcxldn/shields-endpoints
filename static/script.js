@@ -95,4 +95,7 @@ function setup_debug() {
   new BaseRow(document.getElementById("debug_datetime")).setBadgeSource(
     `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Fdatetime%2Fformatted`
   );
+  new BaseRow(document.getElementById("debug_useragent")).setBadgeSource(
+    `https://img.shields.io/endpoint.svg?label=badge%20user%20agent&url=https%3A%2F%2F${hostname}%2Fdebug%2Fuseragent%2Fformatted`
+  );
 }
