@@ -17,6 +17,7 @@ window.onload = function() {
     row2();
     row3();
     debug_row1();
+    debug_row2();
 };
 
 function row1() {
@@ -60,4 +61,12 @@ function debug_row1() {
 
     // Set badge source relative to hostname
     row.childNodes[3].childNodes[0].src = `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Froutes%2Fformatted`;
+}
+
+
+function debug_row2() {
+    const row = document.getElementById("debug_row2");
+
+    // Set badge source relative to hostname
+    row.childNodes[3].childNodes[0].src = `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Fdatetime%2Fformatted`;
 }

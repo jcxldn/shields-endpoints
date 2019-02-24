@@ -9,4 +9,8 @@ module.exports = function(app) {
         });
         res.send(routes);
     });
+
+    app.get("/debug/datetime", (req, res) => {
+        res.send(new Date().toLocaleString());
+      });
 };
