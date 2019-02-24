@@ -45,10 +45,6 @@ td {
   vertical-align: middle;
 }
 
-th {
-  background-image: url(table-shaded.png);
-}
-
 .rowtitle {
   font-weight: bold;
 }
