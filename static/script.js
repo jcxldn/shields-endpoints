@@ -17,6 +17,7 @@ console.log("web client onload DateAndTime: " + d);
 window.onload = function() {
   setup_is_it();
   setup_youtube();
+  setup_twitter();
   setup_debug();
 };
 
@@ -84,6 +85,19 @@ function setup_youtube() {
   );
   new BaseRow(document.getElementById("youtube_views_invalid")).setBadgeSource(
     `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fviews%2Finvalid`
+  );
+}
+
+function setup_twitter() {
+  // Get row and set badge source relative to host
+  new BaseRow(document.getElementById("twitter_followers")).setBadgeSource(
+    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Ffollowers%2Fnoradio`
+  );
+  new BaseRow(document.getElementById("twitter_following")).setBadgeSource(
+    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Ffollowing%2Fnoradio`
+  );
+  new BaseRow(document.getElementById("twitter_likes")).setBadgeSource(
+    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Flikes%2Fnoradio`
   );
 }
 
