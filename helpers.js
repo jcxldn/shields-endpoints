@@ -30,10 +30,16 @@ const days = [
   "saturday"
 ];
 
+const workDays = ["monday", "tuesday", "wednesday", "thursday", "friday"];
+
 function isDayToday(day) {
   const d = new Date();
 
   return day == days[d.getDay()] ? true : false;
+}
+
+function isWorkDayToday() {
+  return workDays.includes(days[new Date().getDay()]);
 }
 
 // Capitalise first letter
@@ -42,4 +48,4 @@ function capitaliseFirst(string) {
 }
 
 // Export
-module.exports = { metric, isDayToday, days, capitaliseFirst };
+module.exports = { metric, isDayToday, isWorkDayToday, days, capitaliseFirst };

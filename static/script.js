@@ -67,6 +67,10 @@ function setup_is_it() {
   new BaseRow(document.getElementById("is_it_invalid")).setBadgeSource(
     `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2Finvalid`
   );
+
+  new BaseRow(document.getElementById("is_it_workday")).setBadgeSource(
+    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2Fworkday`
+  );
 }
 
 function setup_youtube() {
