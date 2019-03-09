@@ -17,7 +17,7 @@ module.exports = function(app) {
       schemaVersion: 1,
       label: `is it a workday`,
       message: "no",
-      color: "red"
+      color: "yellow"
     };
 
     res.send(isWorkDayToday() ? yes : no);
