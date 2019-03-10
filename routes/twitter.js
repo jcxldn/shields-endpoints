@@ -12,9 +12,7 @@ function notFound(res) {
 
 module.exports = function(app) {
   app.get("/twitter/followers/:handle", (req, res) => {
-    const url = `https://pro-web-api.herokuapp.com/twitter/handle/${
-      req.params.handle
-    }`;
+    const url = `https://api.prouser123.me/twitter/handle/${req.params.handle}`;
     request(url, function(error, response, body) {
       const json = JSON.parse(body);
       if (response.statusCode != 200) {
@@ -31,9 +29,7 @@ module.exports = function(app) {
   });
 
   app.get("/twitter/following/:handle", (req, res) => {
-    const url = `https://pro-web-api.herokuapp.com/twitter/handle/${
-      req.params.handle
-    }`;
+    const url = `https://api.prouser123.me/twitter/handle/${req.params.handle}`;
     request(url, function(error, response, body) {
       const json = JSON.parse(body);
       if (response.statusCode != 200) {
@@ -50,9 +46,7 @@ module.exports = function(app) {
   });
 
   app.get("/twitter/likes/:handle", (req, res) => {
-    const url = `https://pro-web-api.herokuapp.com/twitter/handle/${
-      req.params.handle
-    }`;
+    const url = `https://api.prouser123.me/twitter/handle/${req.params.handle}`;
     request(url, function(error, response, body) {
       const json = JSON.parse(body);
       if (response.statusCode != 200) {

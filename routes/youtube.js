@@ -12,9 +12,7 @@ function notFound(res) {
 
 module.exports = function(app) {
   app.get("/youtube/views/:videoId", (req, res) => {
-    const url = `https://pro-web-api.herokuapp.com/youtube/video/${
-      req.params.videoId
-    }`;
+    const url = `https://api.prouser123.me/youtube/video/${req.params.videoId}`;
     request(url, function(error, response, body) {
       const json = JSON.parse(body);
       if (response.statusCode != 200) {
@@ -31,9 +29,7 @@ module.exports = function(app) {
   });
 
   app.get("/youtube/likes/:videoId", (req, res) => {
-    const url = `https://pro-web-api.herokuapp.com/youtube/video/${
-      req.params.videoId
-    }`;
+    const url = `https://api.prouser123.me/youtube/video/${req.params.videoId}`;
     request(url, function(error, response, body) {
       const json = JSON.parse(body);
       if (response.statusCode != 200) {
@@ -50,9 +46,7 @@ module.exports = function(app) {
   });
 
   app.get("/youtube/dislikes/:videoId", (req, res) => {
-    const url = `https://pro-web-api.herokuapp.com/youtube/video/${
-      req.params.videoId
-    }`;
+    const url = `https://api.prouser123.me/youtube/video/${req.params.videoId}`;
     request(url, function(error, response, body) {
       const json = JSON.parse(body);
       if (response.statusCode != 200) {
@@ -69,9 +63,7 @@ module.exports = function(app) {
   });
 
   app.get("/youtube/comments/:videoId", (req, res) => {
-    const url = `https://pro-web-api.herokuapp.com/youtube/video/${
-      req.params.videoId
-    }`;
+    const url = `https://api.prouser123.me/youtube/video/${req.params.videoId}`;
     request(url, function(error, response, body) {
       const json = JSON.parse(body);
       if (response.statusCode != 200) {
