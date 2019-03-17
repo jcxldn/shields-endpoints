@@ -48,7 +48,7 @@ function setup_is_it() {
   let element = new BaseRow(document.getElementById("is_it_today"));
   element.setDisplayDual(`/is-it/${days[d.getDay()]}`);
   element.setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2F${
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2F${
       days[d.getDay()]
     }`
   );
@@ -59,59 +59,59 @@ function setup_is_it() {
   element = new BaseRow(document.getElementById("is_it_tomorrow"));
   element.setDisplayDual(`/is-it/${days[tomorrow.getDay()]}`);
   element.setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2F${
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2F${
       days[tomorrow.getDay()]
     }`
   );
 
   new BaseRow(document.getElementById("is_it_invalid")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2Finvalid`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2Finvalid`
   );
 
   new BaseRow(document.getElementById("is_it_workday")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2Fworkday`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fis-it%2Fworkday`
   );
 }
 
 function setup_youtube() {
   // Get row and set badge source relative to host
   new BaseRow(document.getElementById("youtube_views")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fviews%2FYbJOTdZBX1g`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fviews%2FYbJOTdZBX1g`
   );
   new BaseRow(document.getElementById("youtube_likes")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Flikes%2FYbJOTdZBX1g`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Flikes%2FYbJOTdZBX1g`
   );
   new BaseRow(document.getElementById("youtube_dislikes")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fdislikes%2FYbJOTdZBX1g`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fdislikes%2FYbJOTdZBX1g`
   );
   new BaseRow(document.getElementById("youtube_comments")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fcomments%2FYbJOTdZBX1g`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fcomments%2FYbJOTdZBX1g`
   );
   new BaseRow(document.getElementById("youtube_views_invalid")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fviews%2Finvalid`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fyoutube%2Fviews%2Finvalid`
   );
 }
 
 function setup_twitter() {
   // Get row and set badge source relative to host
   new BaseRow(document.getElementById("twitter_followers")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Ffollowers%2Fnoradio`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Ffollowers%2Fnoradio`
   );
   new BaseRow(document.getElementById("twitter_following")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Ffollowing%2Fnoradio`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Ffollowing%2Fnoradio`
   );
   new BaseRow(document.getElementById("twitter_likes")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Flikes%2Fnoradio`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Flikes%2Fnoradio`
   );
 }
 
 function setup_debug() {
   // Get row and set badge source relative to host
   new BaseRow(document.getElementById("debug_routes")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Froutes%2Fformatted`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Froutes%2Fformatted`
   );
   new BaseRow(document.getElementById("debug_datetime")).setBadgeSource(
-    `https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Fdatetime%2Fformatted`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Fdebug%2Fdatetime%2Fformatted`
   );
   new BaseRow(document.getElementById("debug_useragent")).setBadgeSource(
     `https://img.shields.io/endpoint.svg?label=badge%20user%20agent&url=https%3A%2F%2F${hostname}%2Fdebug%2Fuseragent%2Fformatted`
