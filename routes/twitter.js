@@ -61,4 +61,38 @@ module.exports = function(app) {
       }
     });
   });
+
+  app.get("/twitter/tweets/:handle", (req, res) => {
+    const url = `https://api.prouser123.me/twitter/handle/${req.params.handle}`;
+    request(url, function(error, response, body) {
+      const json = JSON.parse(body);
+      if (response.statusCode != 200) {
+        notFound(res);
+      } else {
+        res.send({
+          schemaVersion: 1,
+          label: `tweets`,
+          message: metric(json.tweets),
+          color: "blue"
+        });
+      }
+    });
+  });
+
+  app.get("/twitter/verified/:handle", (req, res) => {
+    const url = `https://api.prouser123.me/twitter/handle/${req.params.handle}`;
+    request(url, function(error, response, body) {
+      const json = JSON.parse(body);
+      if (response.statusCode != 200) {
+        notFound(res);
+      } else {
+        res.send({
+          schemaVersion: 1,
+          label: `verified`,
+          message: json.verified ? "yes" : "no",
+          color: json.verified ? "brightgreen" : "red"
+        });
+      }
+    });
+  });
 };

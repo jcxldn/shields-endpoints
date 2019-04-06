@@ -103,6 +103,15 @@ function setup_twitter() {
   new BaseRow(document.getElementById("twitter_likes")).setBadgeSource(
     `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Flikes%2Fnoradio`
   );
+  new BaseRow(document.getElementById("twitter_tweets")).setBadgeSource(
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Ftweets%2Fnoradio`
+  );
+  new BaseRow(document.getElementById("twitter_verified_yes")).setBadgeSource(
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Fverified%2Ftwitter`
+  );
+  new BaseRow(document.getElementById("twitter_verified_no")).setBadgeSource(
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Fverified%2Fxtest_1`
+  );
 }
 
 function setup_debug() {
