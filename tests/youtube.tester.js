@@ -30,5 +30,24 @@ describe("YouTube", () => {
           });
       });
     });
+
+    describe(`${capitaliseFirst(option)} - invalid video id`, () => {
+      let path = `/youtube/${option}/i`;
+      it(`GET ${path}`, done => {
+        chai
+          .request(app)
+          .get(path)
+          .end((err, res) => {
+            res.should.have.status(200);
+            chai.expect(res.body).to.include({
+              schemaVersion: 1,
+              label: "youtube",
+              color: "red",
+              message: "video not found"
+            });
+            done();
+          });
+      });
+    });
   });
 });

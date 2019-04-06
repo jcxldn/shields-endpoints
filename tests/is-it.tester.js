@@ -47,4 +47,22 @@ describe("Is It", () => {
       });
     });
   });
+
+  describe(`Is it - invalid day`, () => {
+    it(`GET /is-it/invalid`, done => {
+      chai
+        .request(app)
+        .get(`/is-it/invalid`)
+        .end((err, res) => {
+          res.should.have.status(200);
+          chai.expect(res.body).to.eql({
+            schemaVersion: 1,
+            label: "is it",
+            message: "invalid day",
+            color: "red"
+          });
+          done();
+        });
+    });
+  });
 });

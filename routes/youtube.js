@@ -4,7 +4,7 @@ const { metric } = require("../helpers");
 function notFound(res) {
   res.send({
     schemaVersion: 1,
-    label: `views`,
+    label: `youtube`,
     message: "video not found",
     color: "red"
   });
@@ -15,7 +15,7 @@ module.exports = function(app) {
     const url = `https://api.prouser123.me/youtube/video/${req.params.videoId}`;
     request(url, function(error, response, body) {
       const json = JSON.parse(body);
-      if (response.statusCode != 200) {
+      if (json.code != undefined) {
         notFound(res);
       } else {
         res.send({
@@ -32,7 +32,7 @@ module.exports = function(app) {
     const url = `https://api.prouser123.me/youtube/video/${req.params.videoId}`;
     request(url, function(error, response, body) {
       const json = JSON.parse(body);
-      if (response.statusCode != 200) {
+      if (json.code != undefined) {
         notFound(res);
       } else {
         res.send({
@@ -49,7 +49,7 @@ module.exports = function(app) {
     const url = `https://api.prouser123.me/youtube/video/${req.params.videoId}`;
     request(url, function(error, response, body) {
       const json = JSON.parse(body);
-      if (response.statusCode != 200) {
+      if (json.code != undefined) {
         notFound(res);
       } else {
         res.send({
@@ -66,7 +66,7 @@ module.exports = function(app) {
     const url = `https://api.prouser123.me/youtube/video/${req.params.videoId}`;
     request(url, function(error, response, body) {
       const json = JSON.parse(body);
-      if (response.statusCode != 200) {
+      if (json.code != undefined) {
         notFound(res);
       } else {
         res.send({

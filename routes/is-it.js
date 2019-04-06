@@ -31,6 +31,7 @@ module.exports = function(app) {
         message: "invalid day",
         color: "red"
       });
+      return;
     }
     if (isDayToday(req.params.day)) {
       res.send({

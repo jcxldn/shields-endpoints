@@ -29,9 +29,28 @@ describe("Twitter", () => {
           });
       });
     });
+
+    describe(`${capitaliseFirst(option)} - invalid user`, () => {
+      let path = `/twitter/${option}/i`;
+      it(`GET ${path}`, done => {
+        chai
+          .request(app)
+          .get(path)
+          .end((err, res) => {
+            res.should.have.status(200);
+            chai.expect(res.body).to.include({
+              schemaVersion: 1,
+              label: "twitter",
+              color: "red",
+              message: "user not found"
+            });
+            done();
+          });
+      });
+    });
   });
 
-  describe(`Verified - Yes - @twitter`, () => {
+  describe(`Verified - yes - @twitter`, () => {
     let path = `/twitter/verified/twitter`;
     it(`GET ${path}`, done => {
       chai
@@ -50,7 +69,7 @@ describe("Twitter", () => {
     });
   });
 
-  describe(`Verified - No - @xtest_1`, () => {
+  describe(`Verified - no - @xtest_1`, () => {
     let path = `/twitter/verified/xtest_1`;
     it(`GET ${path}`, done => {
       chai
@@ -63,6 +82,25 @@ describe("Twitter", () => {
             label: "verified",
             color: "red",
             message: "no"
+          });
+          done();
+        });
+    });
+  });
+
+  describe(`Verified - invalid user`, () => {
+    let path = `/twitter/verified/i`;
+    it(`GET ${path}`, done => {
+      chai
+        .request(app)
+        .get(path)
+        .end((err, res) => {
+          res.should.have.status(200);
+          chai.expect(res.body).to.include({
+            schemaVersion: 1,
+            label: "twitter",
+            color: "red",
+            message: "user not found"
           });
           done();
         });
