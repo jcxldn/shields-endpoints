@@ -69,8 +69,8 @@ describe("Twitter", () => {
     });
   });
 
-  describe(`Verified - no - @xtest_1`, () => {
-    let path = `/twitter/verified/xtest_1`;
+  describe(`Verified - no - @testaccount285`, () => {
+    let path = `/twitter/verified/testaccount285`;
     it(`GET ${path}`, done => {
       chai
         .request(app)

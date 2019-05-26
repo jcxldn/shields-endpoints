@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha --require babel-register tests/*.js --exit"
+    "test": "mocha --timeout 5000 --require babel-register tests/*.js --exit"
   },
   "dependencies": {
     "express": "latest",

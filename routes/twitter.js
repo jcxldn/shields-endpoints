@@ -1,5 +1,5 @@
 const request = require("request");
-const { metric } = require("../helpers");
+const { metric, createRequestOptions } = require("../helpers");
 
 function notFound(res) {
   res.send({
@@ -13,7 +13,7 @@ function notFound(res) {
 module.exports = function(app) {
   app.get("/twitter/followers/:handle", (req, res) => {
     const url = `https://api.prouser123.me/twitter/handle/${req.params.handle}`;
-    request(url, function(error, response, body) {
+    request(createRequestOptions(url), function(error, response, body) {
       const json = JSON.parse(body);
       if (json.code != undefined) {
         notFound(res);
@@ -30,7 +30,7 @@ module.exports = function(app) {
 
   app.get("/twitter/following/:handle", (req, res) => {
     const url = `https://api.prouser123.me/twitter/handle/${req.params.handle}`;
-    request(url, function(error, response, body) {
+    request(createRequestOptions(url), function(error, response, body) {
       const json = JSON.parse(body);
       if (json.code != undefined) {
         notFound(res);
@@ -47,7 +47,7 @@ module.exports = function(app) {
 
   app.get("/twitter/likes/:handle", (req, res) => {
     const url = `https://api.prouser123.me/twitter/handle/${req.params.handle}`;
-    request(url, function(error, response, body) {
+    request(createRequestOptions(url), function(error, response, body) {
       const json = JSON.parse(body);
       if (json.code != undefined) {
         notFound(res);
@@ -64,7 +64,7 @@ module.exports = function(app) {
 
   app.get("/twitter/tweets/:handle", (req, res) => {
     const url = `https://api.prouser123.me/twitter/handle/${req.params.handle}`;
-    request(url, function(error, response, body) {
+    request(createRequestOptions(url), function(error, response, body) {
       const json = JSON.parse(body);
       if (json.code != undefined) {
         notFound(res);
@@ -81,7 +81,7 @@ module.exports = function(app) {
 
   app.get("/twitter/verified/:handle", (req, res) => {
     const url = `https://api.prouser123.me/twitter/handle/${req.params.handle}`;
-    request(url, function(error, response, body) {
+    request(createRequestOptions(url), function(error, response, body) {
       const json = JSON.parse(body);
       if (json.code != undefined) {
         notFound(res);

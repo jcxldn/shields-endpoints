@@ -1,14 +1,22 @@
 const request = require("request");
-const { metric } = require("../helpers");
+const { metric, createRequestOptions } = require("../helpers");
 
 module.exports = function(app) {
   app.get("/special/subgap", (req, res) => {
     const baseURL = `https://api.prouser123.me/youtube/channel/username/`;
 
-    request(baseURL + "pewdiepie", function(error, response, body) {
+    request(createRequestOptions(baseURL + "pewdiepie"), function(
+      error,
+      response,
+      body
+    ) {
       const pewds = JSON.parse(body).subscribers;
 
-      request(baseURL + "tseries", function(error, response, body) {
+      request(createRequestOptions(baseURL + "tseries"), function(
+        error,
+        response,
+        body
+      ) {
         const tseries = JSON.parse(body).subscribers;
 
         res.send({
@@ -24,7 +32,7 @@ module.exports = function(app) {
 
   app.get("/special/dogbomb1/lastratio", (req, res) => {
     const url = "https://api.prouser123.me/twitter/status/1114286592737210368";
-    request(url, function(error, response, body) {
+    request(createRequestOptions(url), function(error, response, body) {
       const json = JSON.parse(body);
       res.send({
         schemaVersion: 1,

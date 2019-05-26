@@ -47,5 +47,21 @@ function capitaliseFirst(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+function createRequestOptions(url) {
+  return {
+    headers: {
+      "User-Agent": "pro/shields-endpoints"
+    },
+    url
+  };
+}
+
 // Export
-module.exports = { metric, isDayToday, isWorkDayToday, days, capitaliseFirst };
+module.exports = {
+  metric,
+  isDayToday,
+  isWorkDayToday,
+  days,
+  capitaliseFirst,
+  createRequestOptions
+};
