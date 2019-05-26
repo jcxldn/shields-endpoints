@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "test": "mocha --timeout 5000 --require babel-register tests/*.js --exit"
+    "test": "mocha --timeout 5000 --require babel-register tests/*.js --exit",
+    "coverage:test": "nyc npm test",
+    "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov"
   },
   "dependencies": {
     "express": "latest",
@@ -21,6 +23,7 @@
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
     "mocha": "^5.1.1",
-    "nodemon": "^1.17.4"
+    "nodemon": "^1.17.4",
+    "nyc": "^13.3.0"
   }
 }

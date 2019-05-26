@@ -78,4 +78,36 @@ describe("Debug", () => {
         });
     });
   });
+
+  describe(`DateTime`, () => {
+    let path = `/debug/datetime`;
+    it(`GET ${path}`, done => {
+      chai
+        .request(app)
+        .get(path)
+        .end((err, res) => {
+          res.should.have.status(200);
+          done();
+        });
+    });
+  });
+
+  describe(`DateTime (formatted)`, () => {
+    let path = `/debug/datetime/formatted`;
+    it(`GET ${path}`, done => {
+      chai
+        .request(app)
+        .get(path)
+        .end((err, res) => {
+          res.should.have.status(200);
+          chai.expect(res.body.message).to.be.a("string");
+          chai.expect(res.body).to.include({
+            schemaVersion: 1,
+            label: "date & time",
+            color: "blue"
+          });
+          done();
+        });
+    });
+  });
 });
