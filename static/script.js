@@ -110,7 +110,7 @@ function setup_twitter() {
     `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Fverified%2Ftwitter`
   );
   new BaseRow(document.getElementById("twitter_verified_no")).setBadgeSource(
-    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Fverified%2Ftestaccount285`
+    `https://img.shields.io/endpoint.svg?url=https%3A%2F%2F${hostname}%2Ftwitter%2Fverified%2Fexampleacc`
   );
 }
 
