@@ -69,8 +69,14 @@ describe("Twitter", () => {
     });
   });
 
-  describe(`Verified - no - @testaccount285`, () => {
-    let path = `/twitter/verified/testaccount285`;
+  /**
+   * Sidenote
+   * --------
+   * Twitter seem to keep banning test accounts, this is getting harder to test :(
+   * If this test is failing that is probably why.
+   */
+  describe(`Verified - no - @exampleacc`, () => {
+    let path = `/twitter/verified/exampleacc`;
     it(`GET ${path}`, done => {
       chai
         .request(app)
