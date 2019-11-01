@@ -12,8 +12,9 @@
     "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov"
   },
   "dependencies": {
-    "express": "latest",
     "body-parser": "latest",
+    "express": "latest",
+    "reposize": "^0.1.0",
     "request": "latest",
     "sqlite3": "latest"
   },
