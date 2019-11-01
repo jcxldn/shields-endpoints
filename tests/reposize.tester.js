@@ -13,6 +13,7 @@ describe("Repo Size", () => {
       chai
         .request(app)
         .get(path)
+        .timeout(10000)
         .end((err, res) => {
           res.should.have.status(200);
           chai.expect(res.body).to.include({
