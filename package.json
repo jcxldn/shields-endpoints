@@ -14,7 +14,6 @@
   "dependencies": {
     "body-parser": "latest",
     "express": "latest",
-    "reposize": "^0.1.0",
     "request": "latest",
     "sqlite3": "latest"
   },
