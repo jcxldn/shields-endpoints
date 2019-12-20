@@ -8,8 +8,10 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha --timeout 5000 --require @babel/register tests/*.js --exit",
+    "coverage:all": "npm run coverage:test && npm run coverage:report && npm run coverage:send",
     "coverage:test": "nyc npm test",
-    "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov"
+    "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov",
+    "coverage:send": "codecov"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -21,6 +23,7 @@
     "@babel/register": "^7.7.4",
     "chai": "^4.1.2",
     "chai-http": "^4.3.0",
+    "codecov": "^3.6.1",
     "mocha": "^6.2.2",
     "nyc": "^14.1.1"
   }
