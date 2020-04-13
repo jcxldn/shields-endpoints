@@ -3,7 +3,7 @@
 // Made by @Prouser123 for https://ci.jcx.ovh.
 
 node('docker-cli') {
-  try {
+  postJobGhStatus() {
     scmCloneStage()
   
     useDockerImage('jcxldn/jenkins-containers:node12') {
@@ -11,26 +11,20 @@ node('docker-cli') {
         unstash 'scm'
         sh 'npm ci'
       }
-	
-	  stage('Test') {
-	    sh 'npm test'
-	    ghSetStatus("The tests passed.", "success", "ci/tests")
-	  }
-	
-	  stage('Coverage') {
-	    withCredentials([string(credentialsId: 'codecov_prouser123/shields-endpoints', variable: 'CODECOV_TOKEN')]) {
-	      sh 'npm run coverage:all'
-	    }
-	  }
+
+      stage('Test') {
+        sh 'npm test'
+        ghSetStatus("The tests passed.", "success", "ci/tests")
+      }
+
+      stage('Coverage') {
+        withCredentials([string(credentialsId: 'codecov_prouser123/shields-endpoints', variable: 'CODECOV_TOKEN')]) {
+          sh 'npm run coverage:all'
+        }
+      }
     }
   
     // If on the master branch, deploy with GitHub status checks enabled.
     deployStage(true)
-  } finally {
-    if (currentBuild.result == 'UNSTABLE') {
-	  ghSetStatus("The job is unstable.", "error", "ci")
-	} else {
-	  ghSetStatus("The job completed successfully.", "success", "ci")
-	}
   }
 }
